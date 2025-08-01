@@ -4,6 +4,7 @@ import cors from "cors";
 import bodyParser from 'body-parser';
 import proteinRoutes from './src/Routes/Protein_routes.js'
 import connectDb from './DB/connection.js'
+import signUp from './src/Routes/SignUp.Auth.js'
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/api", proteinRoutes);
+app.use("/api",signUp);
 
 connectDb().then(()=>{
     app.listen(PORT,()=>{
