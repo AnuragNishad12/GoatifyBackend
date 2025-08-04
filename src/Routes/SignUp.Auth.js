@@ -6,7 +6,7 @@ import User from '../Models/User.Models.js'
 
 
 const router = express.Router();
-
+    
 router.post('/signUp',upload.single('image'),async(req,res)=>{
      try {
         const{UserName,Email,password} = req.body;
