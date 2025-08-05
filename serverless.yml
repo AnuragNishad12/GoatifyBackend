@@ -1,7 +1,5 @@
 service: goatify-api-services
-
 frameworkVersion: '4'
-
 
 provider:
   name: aws
@@ -12,17 +10,19 @@ provider:
   timeout: 30
   environment:
     NODE_ENV: production
-  # environment:
-  #   NODE_ENV: ${self:provider.stage}
-  # iam:
-  #   role:
-  #     statements:
-  #       - Effect: Allow
-  #         Action:
-  #           - logs:CreateLogGroup
-  #           - logs:CreateLogStream
-  #           - logs:PutLogEvents
-  #         Resource: '*'
+    MONGODB_URI: ${env:MONGODB_URI}
+    CLOUDINARY_CLOUD_NAME: ${env:CLOUDINARY_CLOUD_NAME}
+    CLOUDINARY_API_KEY: ${env:CLOUDINARY_API_KEY}
+    CLOUDINARY_API_SECRET: ${env:CLOUDINARY_API_SECRET}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+          Resource: '*'
 
 functions:
   app:
@@ -31,16 +31,20 @@ functions:
       - http:
           path: /
           method: ANY
+          cors: true
       - http:
           path: '{proxy+}'
           method: ANY
+          cors: true
 
 plugins:
   - serverless-offline
+ 
 
 custom:
   serverless-offline:
     noPrependStageInUrl: true
+    httpPort: 3000
   dotenv:
     path: .env
 
@@ -50,3 +54,10 @@ package:
     - src/**
     - handler.js
     - package.json
+  exclude:
+    - .env
+    - .git/**
+    - .gitignore
+    - README.md
+    - test/**
+    - coverage/**
