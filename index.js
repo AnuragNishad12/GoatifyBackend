@@ -6,6 +6,7 @@ import proteinRoutes from './src/Routes/Protein_routes.js'
 import connectDb from './DB/connection.js'
 import signUp from './src/Routes/SignUp.Auth.js'
 import login from './src/Routes/login_route.js'
+import tierlevel from './src/Routes/TiersLevelData.js'
 import AWS from 'aws-sdk';
 
 dotenv.config();
@@ -27,6 +28,7 @@ AWS.config.update({
 app.use("/api", proteinRoutes);
 app.use("/api",signUp);
 app.use("/api",login);
+app.use("/api",tierlevel);
 
 
 // connectDb().then(()=>{
