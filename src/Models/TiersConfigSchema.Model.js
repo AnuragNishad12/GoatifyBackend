@@ -25,6 +25,8 @@ const TiersConfigSchema = new mongoose.Schema({
     tier3: { type: TierSchema },
     tier4: { type: TierSchema },
     tier5: { type: TierSchema },
+    tier6: { type: TierSchema },
+    tier7: { type: TierSchema },
   }
 }, { timestamps: true });
 
