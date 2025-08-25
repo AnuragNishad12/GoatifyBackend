@@ -8,6 +8,7 @@ import signUp from './src/Routes/SignUp.Auth.js'
 import login from './src/Routes/login_route.js'
 import tierlevel from './src/Routes/TiersLevelData.js'
 import CheckUserXp from './src/Routes/CheckUserXp.Route.js';
+import CheckUser from './src/Routes/CheckUser_route.js';
 import AWS from 'aws-sdk';
 
 dotenv.config();
@@ -31,6 +32,8 @@ app.use("/api",signUp);
 app.use("/api",login);
 app.use("/api",tierlevel);
 app.use("/api",CheckUserXp);
+app.use("/api",CheckUser);
+
 
 
 // connectDb().then(()=>{

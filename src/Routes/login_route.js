@@ -28,18 +28,18 @@ const {email,password} = bodyData;
 
   try {
 
-     // Find user by email
+     
     const user = await User.findOne({ Email: email });
     if (!user) {
       return res.status(404).json({ status: false, error: 'User not found' });
     }
 
-    // Compare passwords directly (insecure - for demo only)
+    
     if (user.password !== password) {
       return res.status(401).json({ status: false, error: 'Incorrect password' });
     }
 
-    // Success
+    
     return res.status(200).json({
       status: true,
       message: 'Login successful',
