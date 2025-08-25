@@ -42,31 +42,31 @@ const tiers = {
     "tier5": {
       "name": "Crown",
       "divisions": {
-        "V": { "minXp": 7000, "maxXp": 7699 },
-        "IV": { "minXp": 7700, "maxXp": 8399 },
-        "III": { "minXp": 8400, "maxXp": 9099 },
-        "II": { "minXp": 9100, "maxXp": 9799 },
-        "I": { "minXp": 9800, "maxXp": 10000 }
+        "V": { "minXp": 7000, "maxXp": 7699,"image":"" },
+        "IV": { "minXp": 7700, "maxXp": 8399,"image":"" },
+        "III": { "minXp": 8400, "maxXp": 9099,"image":"" },
+        "II": { "minXp": 9100, "maxXp": 9799,"image":"" },
+        "I": { "minXp": 9800, "maxXp": 10000,"image":"" }
       }
     },
 "tier6": {
   "name": "Ace",
   "divisions": {
-    "V": { "minXp": 10001, "maxXp": 11099 },
-    "IV": { "minXp": 11100, "maxXp": 12199 },
-    "III": { "minXp": 12200, "maxXp": 13299 },
-    "II": { "minXp": 13300, "maxXp": 14399 },
-    "I": { "minXp": 14400, "maxXp": 15499 }
+    "V": { "minXp": 10001, "maxXp": 11099,"image":"" },
+    "IV": { "minXp": 11100, "maxXp": 12199,"image":"" },
+    "III": { "minXp": 12200, "maxXp": 13299,"image":"" },
+    "II": { "minXp": 13300, "maxXp": 14399 ,"image":""},
+    "I": { "minXp": 14400, "maxXp": 15499 ,"image":""}
   }
 },
 "tier7": {
   "name": "GOAT",
   "divisions": {
-    "V": { "minXp": 15500, "maxXp": 16599 },
-    "IV": { "minXp": 16600, "maxXp": 17699 },
-    "III": { "minXp": 17700, "maxXp": 18799 },
-    "II": { "minXp": 18800, "maxXp": 19899 },
-    "I": { "minXp": 19900, "maxXp": 21000 }
+    "V": { "minXp": 15500, "maxXp": 16599,"image":"" },
+    "IV": { "minXp": 16600, "maxXp": 17699 ,"image":""},
+    "III": { "minXp": 17700, "maxXp": 18799,"image":"" },
+    "II": { "minXp": 18800, "maxXp": 19899,"image":"" },
+    "I": { "minXp": 19900, "maxXp": 21000,"image":"" }
   }
 }
   }
@@ -83,7 +83,7 @@ export default function getTierAndDivision(xp) {
       }
     }
   }
-  // If no match found, return default (lowest tier/division)
+  
   return { tier: "tier1", division: "V" };
 }
 
