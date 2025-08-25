@@ -16,7 +16,7 @@ earnedXp:{
 }
 
 
-});
+},{timestamps:true});
 
 
 const XpUpdatesExport = mongoose.model("XpUpdatesData",XpUpdates);

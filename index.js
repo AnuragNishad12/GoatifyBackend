@@ -9,6 +9,7 @@ import login from './src/Routes/login_route.js'
 import tierlevel from './src/Routes/TiersLevelData.js'
 import CheckUserXp from './src/Routes/CheckUserXp.Route.js';
 import CheckUser from './src/Routes/CheckUser_route.js';
+import SelectCategory from './src/Routes/SelectCategory_Route.js'
 import AWS from 'aws-sdk';
 
 dotenv.config();
@@ -33,7 +34,7 @@ app.use("/api",login);
 app.use("/api",tierlevel);
 app.use("/api",CheckUserXp);
 app.use("/api",CheckUser);
-
+app.use("/api",SelectCategory);
 
 
 // connectDb().then(()=>{
