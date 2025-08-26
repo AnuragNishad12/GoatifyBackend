@@ -14,7 +14,7 @@ const SelectCategorySchema = new mongoose.Schema({
 },{timestamps:true});
 
 
-const SelectCategory = mongoose.model("Category",SelectCategorySchema);
+const SelectCategory = mongoose.model("GoatifyCategory",SelectCategorySchema);
 export default SelectCategory;
 
 
