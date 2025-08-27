@@ -77,14 +77,22 @@ export default function getTierAndDivision(xp) {
   for (const tierKey in tiers) {
     const tier = tiers[tierKey];
     for (const divisionKey in tier.divisions) {
-      const { minXp, maxXp } = tier.divisions[divisionKey];
+      const { minXp, maxXp, image } = tier.divisions[divisionKey];
       if (xp >= minXp && xp <= maxXp) {
-        return { tier: tierKey, division: divisionKey };
+        return { 
+          tier: tier.name,       
+          division: divisionKey, 
+          image                  
+        };
       }
     }
   }
-  
-  return { tier: "tier1", division: "V" };
+
+    return { 
+    tier: "tier1", 
+    division: "V", 
+    image: tiers.tier1.divisions["V"].image 
+  };
 }
 
 
